@@ -9,7 +9,12 @@ import java.util.List;
 import java.util.Optional;
 
 public class MemberService {
-    private  final MemberRepository memberRepository=new MemoryMemberRepository();
+    //memberRepository를 생성과 동시에 내부에서 선언해줄 수 있도록 함
+    private  final MemberRepository memberRepository;
+
+    public MemberService(MemberRepository memberRepository){
+        this.memberRepository=memberRepository;
+    }
 
     /**
      *
@@ -38,6 +43,6 @@ public class MemberService {
     }
 
     public Optional<Member> findOne(Long memberId){
-        return memberRepository
+        return memberRepository.findById(memberId);
     }
 }
