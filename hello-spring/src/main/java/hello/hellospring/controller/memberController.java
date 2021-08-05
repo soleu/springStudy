@@ -1,2 +1,8 @@
-package hello.hellospring.controller;public class memberController {
+package hello.hellospring.controller;
+
+import org.springframework.stereotype.Controller;
+
+@Controller
+public class memberController {
+
 }
