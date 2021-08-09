@@ -3,10 +3,13 @@ package hello.hellospring.service;
 import hello.hellospring.domain.Member;
 import hello.hellospring.repository.MemberRepository;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
 //@Service
+//JPA 사용시 주의할점 : Data를 저장하고 변경할때 항상 Tranjection이 있어야 함
+@Transactional
 public class MemberService {
     //memberRepository를 생성과 동시에 내부에서 선언해줄 수 있도록 함
     private  final MemberRepository memberRepository;
