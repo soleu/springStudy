@@ -16,7 +16,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
 @Transactional
-public class MemberServiceIntegrationTest {
+class MemberServiceIntegrationTest {
 
 
 //    @BeforeEach
@@ -36,7 +36,7 @@ public class MemberServiceIntegrationTest {
     void 회원가입() {
         //given : 뭔가가 주어졌는데
         Member member = new Member();
-        member.setName("");
+        member.setName("spring");
         //when : 이걸 실행했을 때
         Long saveId =memberService.join(member);
 
